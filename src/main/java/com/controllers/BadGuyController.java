@@ -23,7 +23,12 @@ public class BadGuyController {
     @Autowired
     private BadGuyService badGuyService;
 
-    @GetMapping("quotations/{count}")
+    @GetMapping("hello")
+    public String hello() {
+        return "Hello, I'm a bad guy.";
+    }
+
+    @GetMapping({"quotations", "quotations/{count}"})
     public ResultWrapper<List<String>> getBadGuyQuotations(
       @PathVariable(value = "count", required = false) Integer count
     ) {
@@ -38,10 +43,5 @@ public class BadGuyController {
                 setData(null);
             }};
         }
-    }
-
-    @GetMapping("hello")
-    public String hello() {
-        return "Hello";
     }
 }

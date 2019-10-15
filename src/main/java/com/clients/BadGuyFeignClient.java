@@ -2,7 +2,6 @@ package com.clients;
 
 import com.clients.results.QuotationResult;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -10,7 +9,6 @@ import org.springframework.web.bind.annotation.PathVariable;
  * @author liuqian
  * @date 2019/10/14 20:40.
  */
-@Component
 @FeignClient(name = "badGuy", url = "${bab.guy.url}")
 public interface BadGuyFeignClient {
 
