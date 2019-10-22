@@ -38,7 +38,7 @@ public class BadGuyController {
         } catch (Exception e) {
             log.error("Failed to get bad guy quotations.", e);
             return new ResultWrapper<List<String>>() {{
-                setCode("1000002");
+                setCode(500);
                 setMessage("error");
                 setData(null);
             }};

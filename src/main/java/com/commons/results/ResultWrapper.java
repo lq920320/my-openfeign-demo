@@ -11,14 +11,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ResultWrapper<T> {
-    private String code;
+    private Integer code;
     private String message;
     private T data;
 
     @SuppressWarnings("unchecked")
     public ResultWrapper(T data) {
-        this.code = "1000000";
-        this.message = "OK";
+        this.code = 200;
+        this.message = "";
         this.data = data;
     }
 }
