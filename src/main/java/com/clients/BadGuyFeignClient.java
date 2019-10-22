@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  * @author liuqian
  * @date 2019/10/14 20:40.
  */
-@FeignClient(name = "badGuy", url = "${bab.guy.url}")
+@FeignClient(name = "badGuy", url = "${bab.guy.url}", path = "api")
 public interface BadGuyFeignClient {
 
     /**
@@ -17,7 +17,7 @@ public interface BadGuyFeignClient {
      *
      * @return
      */
-    @GetMapping("api/SweetNothings")
+    @GetMapping("SweetNothings")
     String getSweetNothings();
 
     /**
@@ -26,6 +26,6 @@ public interface BadGuyFeignClient {
      * @param count 获取甜言蜜语条数
      * @return Json 格式的结果
      */
-    @GetMapping("api/SweetNothings/{count}/Serialization/Json")
+    @GetMapping("SweetNothings/{count}/Serialization/Json")
     QuotationResult<String> getSweetNothingsJsonByCount(@PathVariable("count") Integer count);
 }
